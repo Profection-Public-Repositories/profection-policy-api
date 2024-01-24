@@ -2,7 +2,8 @@ openapi: 3.1.0
 info:
   title: profection Berechtigungs-API 
   description: |-
-    "Einfache API die beschreibt wie Berechtigungen für spezifische Kontexte (z.B. Anwendungen wie das Gehaltstool) angefragt werden."
+    "Durch diese API können Berechtigungen (Autorisierung) für Menschen, Dienste und Maschinen in beschriebenen
+    Kontexten (z.B. Anwendungen wie das Gehaltstool) angefragt werden."
     
   contact:
     name: Patrick Schiffler
@@ -48,16 +49,21 @@ paths:
 
         '400':
             description: |-
-              "Die Anfrage wurde aufgrund ungültiger oder fehlender Parameter abgelehnt. Stellen Sie sicher, dass alle erforderlichen Parameter korrekt formatiert und vollständig sind."
+              "Die Anfrage wurde aufgrund ungültiger oder fehlender Parameter abgelehnt. Stellen Sie sicher, dass alle
+              erforderlichen Parameter korrekt formatiert und vollständig sind."
         '404':
             description: |-
-              "Die angefragten Benutzerdaten oder der Kontext wurden nicht gefunden. Überprüfen Sie die Richtigkeit der Benutzer-E-Mail und des Kontextes in der Anfrage."
+              "Die angefragten Benutzerdaten oder der Kontext wurden nicht gefunden. Überprüfen Sie die Richtigkeit der
+              Benutzer-E-Mail und des Kontextes in der Anfrage."
         '405':
             description: |-
-              "Die Anfrage entspricht nicht den festgelegten Validierungsregeln. Überprüfen Sie, ob die Anfrage den erwarteten Datenstrukturen und Wertebereichen entspricht."
+              "Die Anfrage entspricht nicht den festgelegten Validierungsregeln. Überprüfen Sie, ob die Anfrage den
+              erwarteten Datenstrukturen und Wertebereichen entspricht."
         '500':
             description: |-
-              "Ein interner Serverfehler ist aufgetreten. Dies könnte auf ein Problem mit dem Server oder der dahinterliegenden Infrastruktur hinweisen. Wenden Sie sich an den API-Support, wenn das Problem weiterhin besteht."
+              "Ein interner Serverfehler ist aufgetreten. Dies könnte auf ein Problem mit dem Server oder der
+              dahinterliegenden Infrastruktur hinweisen. Wenden Sie sich an den API-Support, wenn das Problem weiterhin
+              besteht."
 
 components:
   schemas:
@@ -69,7 +75,8 @@ components:
           examples:
             - "1.0.0"
           description: |-
-            "Gibt die Version der Berechtigungen an, wobei höhere Zahlen neuere Versionen darstellen. Nützlich, um Updates im Berechtigungsschema zu verfolgen."
+            "Gibt die Version der Berechtigungen an, wobei höhere Zahlen neuere Versionen darstellen. Nützlich, um
+            Updates im Berechtigungsschema zu verfolgen."
         context:
           type: string
           examples: 
@@ -103,7 +110,8 @@ components:
               - "beispiel2@persona.de"
               - "beispiel3@persona.de"
           description: |-
-            "Gibt an, wessen Gehalt der User im gegebenen Kontext freigeben kann, wenn kann_gehalt_bearbeiten=true ist."
+            "Gibt an, wessen Gehalt der User im gegebenen Kontext bearbeiten kann, wenn kann_gehalt_bearbeiten=true
+            ist."
         kann_gehalt_freigeben:
           type: boolean
           examples:
@@ -119,4 +127,4 @@ components:
               - "beispiel2@persona.de"
               - "beispiel3@persona.de"
           description: |-
-            "Gibt an, wessen Gehalt der User im gegebenen Kontext bearbeiten kann, wenn kann_gehalt_freigeben=true ist."
+            "Gibt an, wessen Gehalt der User im gegebenen Kontext freigeben kann, wenn kann_gehalt_freigeben=true ist."
